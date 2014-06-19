@@ -434,25 +434,25 @@ CREATE TABLE thread_view_asso (
   depth          int(4) NOT NULL,
   PRIMARY KEY (id)) CHARACTER SET UTF8;
 CREATE TABLE mailing_list (
-  id                  bigint(8) NOT NULL,
+  id                  bigint(8) NOT NULL AUTO_INCREMENT,
   domain_abstract_id bigint(8) NOT NULL,
   user_id            bigint(8) NOT NULL,
   is_public          bool NOT NULL,
   identifier         varchar(255) NOT NULL,
   description        text,
   uuid               varchar(255) NOT NULL,
-  creation_date      timestamp(6) NOT NULL,
-  modification_date  timestamp(6) NOT NULL,
+  creation_date      timestamp NOT NULL,
+  modification_date  timestamp NOT NULL,
   PRIMARY KEY (id));
 CREATE TABLE mailing_list_contact (
-  id                 bigint(8) NOT NULL,
+  id                 bigint(8) NOT NULL AUTO_INCREMENT,
   mailing_list_id    bigint(8) NOT NULL,
   mail               varchar(255) NOT NULL,
   first_name         varchar(255),
   last_name          varchar(255),
   uuid               varchar(255) NOT NULL,
-  creation_date      timestamp(6) NOT NULL,
-  modification_date  timestamp(6) NOT NULL,
+  creation_date      timestamp NOT NULL,
+  modification_date  timestamp NOT NULL,
   mailing_list_contact_index int4,
   PRIMARY KEY (id));
 
